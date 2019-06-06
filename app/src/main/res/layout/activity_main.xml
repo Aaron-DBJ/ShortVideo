@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--注意其他布局必须在SurfaceView后面，否则surfaceview会遮挡其他布局-->
+    <SurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/top_control_panel_layout"
+        android:layout_marginTop="@dimen/margin"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_flash"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginBottom="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/margin"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/flash_off"
+            android:layout_width="@dimen/small_icon"
+            android:layout_height="@dimen/small_icon" />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/control_panel_layout"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_zoom"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/small_margin"
+            android:gravity="center"
+            android:text="1.0x"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="onZoomClick"
+            android:textColor="@color/white"
+            android:background="@drawable/circle_button"
+            android:layout_width="@dimen/main_button_zoom_in"
+            android:layout_height="@dimen/main_button_zoom_in"
+            android:focusable="true" />
+        <RelativeLayout
+            android:layout_below="@+id/tv_zoom"
+            android:id="@+id/control_panel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/control_panel_height">
+            <include layout="@layout/timer"/>
+            <ImageView
+                android:id="@+id/capture"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_toStartOf="@+id/take_photo"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/capture"
+                android:layout_width="@dimen/small_icon"
+                android:layout_height="@dimen/small_icon" />
+            <ImageView
+                android:id="@+id/take_photo"
+                android:layout_centerInParent="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/layer_button"
+                android:layout_width="@dimen/main_button"
+                android:layout_height="@dimen/main_button" />
+            <ImageView
+                android:id="@+id/switch_camera"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_toEndOf="@+id/take_photo"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/switch_camera"
+                android:layout_width="@dimen/small_icon"
+                android:layout_height="@dimen/small_icon" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/edit_layout"
+        android:visibility="gone"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/unhandled_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <RelativeLayout
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/control_panel_height">
+
+            <ImageView
+                android:id="@+id/back_unsave"
+                android:src="@drawable/unsave_image"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginLeft="@dimen/largeMargin"
+                android:layout_marginBottom="@dimen/largeMargin"
+                android:background="@drawable/circle_button"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_width="@dimen/main_button"
+                android:layout_height="@dimen/main_button" />
+            <ImageView
+                android:id="@+id/back_save"
+                android:src="@drawable/save_image"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="@dimen/largeMargin"
+                android:layout_marginBottom="@dimen/largeMargin"
+                android:background="@drawable/circle_button"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="@dimen/main_button"
+                android:layout_height="@dimen/main_button" />
+        </RelativeLayout>
+    </FrameLayout>
+
+
+</FrameLayout>

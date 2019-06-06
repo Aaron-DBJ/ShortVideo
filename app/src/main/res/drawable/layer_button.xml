@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/lightGray" />
+            <size
+                android:width="@dimen/main_button_bg"
+                android:height="@dimen/main_button_bg" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="8dp"
+        android:left="8dp"
+        android:right="8dp"
+        android:top="8dp">
+        <selector xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:state_pressed="true">
+                <shape android:shape="oval">
+                    <solid android:color="#ccffffff" />
+                    <size
+                        android:width="@dimen/main_button_zoom_in"
+                        android:height="@dimen/main_button_zoom_in" />
+                </shape>
+            </item>
+
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="@color/white" />
+                    <size
+                        android:width="@dimen/main_button"
+                        android:height="@dimen/main_button" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+</layer-list>
