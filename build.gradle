@@ -16,8 +16,11 @@ buildscript {
 allprojects {
     repositories {
         google()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.google.com' }
+        maven { url "https://dl.bintray.com/aiyaapp/sdk" }
+        maven { url 'http://raw.github.com/saki4510t/libcommon/master/repository/' }
         jcenter()
-        
     }
 }
 

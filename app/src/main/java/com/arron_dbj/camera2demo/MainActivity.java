@@ -6,6 +6,7 @@ import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.hardware.camera2.CameraDevice;
+import android.hardware.usb.UsbDevice;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
@@ -29,6 +30,7 @@ import com.arron_dbj.camera2demo.utils.FileHelper;
 import com.arron_dbj.camera2demo.utils.Logger;
 import com.arron_dbj.camera2demo.utils.PermissionUtil;
 import com.arron_dbj.camera2demo.utils.StringUtil;
+import com.jiangdg.usbcamera.USBCameraManager;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -73,6 +75,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String mVideoPath;
 
     private File dir;
+    // 外接摄像头
+//    private UVCCameraHelper mCameraHelper;
+//    private CameraViewInterface mUVCCameraView;
+
+    USBCameraManager.OnMyDevConnectListener onMyDevConnectListener = new USBCameraManager.OnMyDevConnectListener() {
+        @Override
+        public void onAttachDev(UsbDevice usbDevice) {
+
+        }
+
+        @Override
+        public void onDettachDev(UsbDevice usbDevice) {
+
+        }
+
+        @Override
+        public void onConnectDev(UsbDevice usbDevice, boolean b) {
+
+        }
+
+        @Override
+        public void onDisConnectDev(UsbDevice usbDevice) {
+
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -196,7 +224,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     timer.setBase(SystemClock.elapsedRealtime());
                     ivRedDot.setVisibility(View.GONE);
                     camera2Helper.stopRecord();
-                    Toast.makeText(MainActivity.this, "视频储存在："+mVideoPath, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "视频储存在：" + mVideoPath, Toast.LENGTH_SHORT).show();
                 }else {
                     camera2Helper.startRecord(mVideoPath, rotation);
                     timer.start();
@@ -260,6 +288,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (previewBitmap != null) {
             previewBitmap = null;
         }
+
     }
 
     private void showMainUI() {
@@ -275,4 +304,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         topControlPanelLayout.setVisibility(View.GONE);
         editImageVideoLayout.setVisibility(View.VISIBLE);
     }
+
 }

@@ -35,4 +35,9 @@ public class FileHelper {
         }
         return new File(cachePath + File.separator + dirName);
     }
+
+    public String getFileName(String filePath){
+        int index = filePath.lastIndexOf("/");
+        return filePath.substring(index+1);
+    }
 }

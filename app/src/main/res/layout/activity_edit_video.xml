@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.dueeeke.videoplayer.player.IjkVideoView
+        android:id="@+id/video_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/choose_music"
+        android:layout_marginTop="@dimen/largeMargin"
+        android:gravity="center"
+        android:padding="@dimen/small_padding"
+        android:layout_gravity="center_horizontal"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/choose_music"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_width="76dp"
+        android:layout_height="48dp" />
+
+    <io.netopen.hotbitmapgg.library.view.RingProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progress_bar"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        app:max="100"
+        android:layout_marginTop="100dp"
+        app:ringColor="@color/AZURE"
+        app:ringProgressColor="@color/white"
+        app:ringWidth="3dp"
+        app:style="FILL"
+        app:textColor="@color/AQUAMARINE"
+        android:visibility="gone"
+        app:textIsShow="true"
+        app:textSize="16sp" />
+</FrameLayout>

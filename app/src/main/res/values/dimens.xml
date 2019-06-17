@@ -4,6 +4,12 @@
     <dimen name="main_button_zoom_in">36dp</dimen>
     <dimen name="main_button_bg">72dp</dimen>
 
+    <dimen name="min_space">5dp</dimen>
+    
+    <dimen name="small_padding">4dp</dimen>
+    <dimen name="middle_padding">8dp</dimen>
+    <dimen name="large_padding">12dp</dimen>
+
     <dimen name="small_icon">32dp</dimen>
     <dimen name="small_margin">8dp</dimen>
     <dimen name="margin">16dp</dimen>

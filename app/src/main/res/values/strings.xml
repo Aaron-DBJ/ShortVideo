@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Camera2Demo</string>
+    <string name="choose_music">选择音乐</string>
+    <string name="test_video">测试视频</string>
 </resources>
