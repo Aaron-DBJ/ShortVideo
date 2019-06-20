@@ -53,7 +53,6 @@ import java.util.concurrent.Executors;
  * @version v1.0 2017:11:09 09:31
  */
 public class CameraActivity extends AppCompatActivity {
-
     private EffectController mEffectController;
     private DefaultEffectFlinger mFlinger;
     private View mContainer;
@@ -75,7 +74,6 @@ public class CameraActivity extends AppCompatActivity {
         });
         int id = AiyaEffects.init(getApplicationContext(), "0b271b34f259bd7aa24dae84315dfb15");
         Log.e("wuwang", "id:" + id);
-
         mRecord = new CameraRecorder2();
         mRecord.setOutputPath(tempPath);
         SurfaceView surface = (SurfaceView) findViewById(R.id.mSurface);
