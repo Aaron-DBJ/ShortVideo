@@ -65,5 +65,7 @@ dependencies {
     implementation 'com.vincent.filepicker:MultiTypeFilePicker:1.0.8'
     // 加载音乐的进度条
     implementation 'com.github.HotBitmapGG:RingProgressBar:V1.2.3'
+    // 推流的库
+    implementation 'com.github.WangShuo1143368701:WSLiveDemo:v1.7'
 
 }

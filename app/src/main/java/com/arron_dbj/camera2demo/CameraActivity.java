@@ -59,6 +59,8 @@ public class CameraActivity extends AppCompatActivity {
     private CameraRecorder2 mRecord;
     private String tempPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/test.mp4";
 
+    //推流相关
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
